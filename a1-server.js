@@ -16,11 +16,13 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 // Set up some program variables (global) for our maths problem
 var augend = 6;
 var addend = 3;
+var realAnswer = 9;
 var sum;
 
 // We will use a remote console logging service for debug messages
 // Define the service variable and connnect
-var consolere = require('console-remote-client').connect('console.re','80','<<<A00198515/Assigment_One>>>');
+// You must edit <<<change_to_your_repo_name>>> to be your repository name
+var consolere = require('console-remote-client').connect('A00198515/Assignment_One');
 
 // Function to handle web browser requests and server responses
 function handleRequest(request, response){
@@ -28,10 +30,10 @@ function handleRequest(request, response){
     sum = augend * addend;
     // Send user the server response 
     response.end('Assignment One. Expected Sum of 6 + 3 is 9, Actual Sum returned by program is : ' + sum);
-}
-function debuggedHandleRequest (request, response){
-    sum1= augend + addend;
-    response.end('Sum: '+ sum1 + 'First variable: ' + augend + 'Second variable: ' + addend);
+    console.re.log("The real answer is " + realAnswer );
+    console.re.log("The value of the augend is " + augend );
+    console.re.log("The value of the addend is " + addend );
+    console.re.log("The value of the sum is " + sum );
     // ASSIGNMENT
     // 1. Add a debug message which ouputs the sum of the simple equation above. Values are available in the augend, addend 
     // and sum (global) variables
@@ -40,11 +42,14 @@ function debuggedHandleRequest (request, response){
 
 // Create an instance of a http server
 var server = http.createServer(handleRequest);
-var server = http.createServer(debbugedHandleRequest);
 
 // Lets start our server
 server.listen(server_port, server_ip_address, function(){
     // This is the callback function which triggered when server is successfully listening (active).
+    console.re.log("The server has started.");
+    console.re.log("Your server ip address is " + server_ip_address );
+    console.re.log("Your server port is " + server_port );
+    
     
     // ASSIGNMENT
     // 3. Add a debug message which ouputs a message indicating the server is started (listening for user requests).
