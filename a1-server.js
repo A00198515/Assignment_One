@@ -16,7 +16,7 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 // Set up some program variables (global) for our maths problem
 var augend = 6;
 var addend = 3;
-var realAnswer = 9;
+var realAnswer = augend + addend;
 var sum;
 
 // We will use a remote console logging service for debug messages
