@@ -28,6 +28,7 @@ function handleRequest(request, response){
     sum = augend * addend;
     // Send user the server response 
     response.end('Assignment One. Expected Sum of 6 + 3 is 9, Actual Sum returned by program is : ' + sum);
+}
 function debuggedHandleRequest (request, response){
     sum1= augend + addend;
     response.end('Sum: '+ sum1 + 'First variable: ' + augend + 'Second variable: ' + addend);
