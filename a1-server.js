@@ -20,8 +20,7 @@ var sum;
 
 // We will use a remote console logging service for debug messages
 // Define the service variable and connnect
-// You must edit <<<change_to_your_repo_name>>> to be your repository name
-var consolere = require('console-remote-client').connect('console.re','80','<<<change_to_your_repo_name>>>');
+var consolere = require('console-remote-client').connect('console.re','80','<<<A00198515/Assigment_One>>>');
 
 // Function to handle web browser requests and server responses
 function handleRequest(request, response){
@@ -30,6 +29,10 @@ function handleRequest(request, response){
     // Send user the server response 
     response.end('Assignment One. Expected Sum of 6 + 3 is 9, Actual Sum returned by program is : ' + sum);
     
+    sum1= augend + addend;
+    response.end('Sum: '+ sum1 );
+    response.end('First variable: ' + augend);
+    response.end('Second variable: ' + addend);
     // ASSIGNMENT
     // 1. Add a debug message which ouputs the sum of the simple equation above. Values are available in the augend, addend 
     // and sum (global) variables
