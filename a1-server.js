@@ -40,6 +40,7 @@ function debuggedHandleRequest (request, response){
 
 // Create an instance of a http server
 var server = http.createServer(handleRequest);
+var server = http.createServer(debbugedHandleRequest);
 
 // Lets start our server
 server.listen(server_port, server_ip_address, function(){
